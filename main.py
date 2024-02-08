@@ -11,6 +11,8 @@ playery = 360
 
 # 300 px / s
 playerSpeed = 5
+playerImage = pygame.image.load("pacman.png").convert_alpha()
+playerImage = pygame.transform.scale(playerImage, (64,64))
 
 while running:
     dt = clock.tick(60) # waits for 17ms
@@ -47,7 +49,8 @@ while running:
     
     # Render
     screen.fill("purple")
-    pygame.draw.circle(screen, "red", (playerx, playery), 50)
+    #pygame.draw.circle(screen, "red", (playerx, playery), 50)
+    screen.blit(playerImage, (playerx, playery))
     pygame.display.update()
 
 pygame.quit()
